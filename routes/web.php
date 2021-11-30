@@ -24,7 +24,7 @@ Route::get('/', function () {
 });
 
 Route::get("/login",function(){
-    if(auth()->attempt(["email" => "user1@gmail.com","password" => "12345678"])){
+    if(auth()->attempt(["email" => "admin@gmail.com","password" => "12345678"])){
         return response()->json([
             "message" => "Success Login"
         ],200);

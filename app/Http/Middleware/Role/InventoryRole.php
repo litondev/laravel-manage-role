@@ -16,11 +16,9 @@ class InventoryRole
      * @return mixed
      */
     public function handle(Request $request, Closure $next)
-    {                
-        try{
-            $role_users = auth()->user()->roles()->pluck("name")->toArray();
-            
-            if(in_array("admin",$role_users)){
+    {       
+        try{            
+            if($request->isAdmin){
                 return $next($request);
             }
 

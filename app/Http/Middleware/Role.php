@@ -20,6 +20,8 @@ class Role
             $role_users = auth()->user()->roles()->pluck("name")->toArray();
             
             if(in_array("admin",$role_users)){
+                $request->isAdmin = true;
+                
                 return $next($request);
             }
 

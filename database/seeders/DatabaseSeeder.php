@@ -48,7 +48,7 @@ class DatabaseSeeder extends Seeder
         // Inventory 1
         $inventory = User::create([
             "name" => "inventory",
-            "email" => "inventroy@gmail.com",
+            "email" => "inventory@gmail.com",
             "password" => \Hash::make("12345678")
         ]);
 
@@ -67,7 +67,7 @@ class DatabaseSeeder extends Seeder
          // Inventory 2
          $inventory2 = User::create([
             "name" => "inventory2",
-            "email" => "inventroy2@gmail.com",
+            "email" => "inventory2@gmail.com",
             "password" => \Hash::make("12345678")
         ]);
 

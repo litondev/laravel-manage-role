@@ -17,12 +17,10 @@ class ProductRole
     public function handle(Request $request, Closure $next)
     {
         try{
-            $role_users = auth()->user()->roles()->pluck("name")->toArray();
-            
-            if(in_array("admin",$role_users)){
+            if($request->isAdmin){
                 return $next($request);
             }
-
+            
             if(in_array(request()->route()->getName(),["product.update","product.edit","product.destroy","product.show"])){            
                 if(!auth()->user()->products()->select("id")->where("id",request()->route("product"))->count()){
                     dd("Not Allowed");
